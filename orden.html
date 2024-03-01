@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<title> Pizza Paradise - Ordenar</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+		<img class="logo"  src="img/logos.png">
+	</header>
+	<nav>
+		<a href="index.html">Incio</a>
+		<a href="menu.html">Menu</a>
+		<a href="orden.html">Ordena</a>
+		<a href="datos.html">Registro</a>
+	</nav>
+    <br>
+   
+  <style>
+    .button-group {
+      display: grid;
+      grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+      gap: 20px 10px;
+      text-align: center;
+    }
+    .button-group img {
+      width: 200px;
+      height: 200px;
+    }
+    .button-group div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: solid 1px #111111;
+      margin-inline: 6px;
+      border-radius: 6px;
+      padding: 8px 0px 8px 0px;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px;
+      font-size: 16px;
+      text-align: center;
+      line-height: 1;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 5px;
+      transition: background-color 0.2s;
+    }
+    .button:hover {
+      background-color: #F5B041;
+      color: #fff;
+    }
+     .button:active {
+      background-color: #e6930f;
+      color: #fff;
+    }
+    #orderSummary{
+      text-align: center;
+    }
+  </style>
+  <div id="orderSummary"></div>
+  <center><h3><p>Elige tu ingrediente favorito</p></h3></center>
+  <div id="pizzasGroup" class="button-group">
+    <div>
+      <span>Peperoni</span>
+		  <img src="img/peperoni.jpg" >
+      <span>
+        <label for="qpeperoni">Cantidad:</label>
+        <input type="number" id="qpeperoni" name="qpeperoni" min="0" max="25"> 
+      </span>
+      <select id="psizes" name="osizes">
+        <option value="Grande">Grande de 8 porciones $5.99</option>
+        <option value="Estacion">Pizza 4 estaciones $7.00</option>
+        <option value="Gigante">Gigante de 12 porciones $12.99</option>
+      </select>
+      <button class="button" id="Peperoni">Agregar</button>
+    </div>
+    <div>
+      <span>Extra queso</span>
+      <img src="img/pizza queso.jpg" >
+      <span>
+        <label for="qxqueso">Cantidad:</label>
+        <input type="number" id="qxqueso" name="qxqueso" min="0" max="25"> 
+      </span>
+      <select id="psizes" name="osizes">
+        <option value="Grande">Grande de 8 porciones $5.99</option>
+        <option value="Estacion">Pizza 4 estaciones $7.00</option>
+        <option value="Gigante">Gigante de 12 porciones $12.99</option>
+      </select>
+      <button class="button" id="Pizza queso">Agregar</button>
+    </div>
+    <div>
+      <span>Jamón y piña</span>
+      <img src="img/pizza pina.jpg" >
+      <span>
+        <label for="qjamonpina">Cantidad:</label>
+        <input type="number" id="qjamonpina" name="qjamonpina" min="0" max="25"> 
+      </span>
+      <select id="psizes" name="osizes">
+        <option value="Grande">Grande de 8 porciones $5.99</option>
+        <option value="Estacion">Pizza 4 estaciones $7.00</option>
+        <option value="Gigante">Gigante de 12 porciones $12.99</option>
+      </select>
+      <button class="button" id="jamon piña">Agregar</button>
+    </div>
+    <div>
+      <span>Cuatro estaciones</span>
+      <img src="img/pizza mixta.jpg" >
+      <span>
+        <label for="q4esta">Cantidad:</label>
+        <input type="number" id="q4esta" name="q4esta" min="0" max="25"> 
+      </span>
+      <select id="psizes" name="osizes">
+        <option value="Grande">Grande de 8 porciones $5.99</option>
+        <option value="Estacion">Pizza 4 estaciones $7.00</option>
+        <option value="Gigante">Gigante de 12 porciones $12.99</option>
+      </select>
+      <button class="button" id= "Cuatro estaciones">Agregar</button>
+    </div>
+    <div>
+      <span>Jamón y queso</span>
+      <img src="img/pizza.png" >
+      <span>
+        <label for="qjamonqueso">Cantidad:</label>
+        <input type="number" id="qjamonqueso" name="qjamonqueso" min="0" max="25"> 
+      </span>
+      <select id="psizes" name="osizes">
+        <option value="Grande">Grande de 8 porciones $5.99</option>
+        <option value="Estacion">Pizza 4 estaciones $7.00</option>
+        <option value="Gigante">Gigante de 12 porciones $12.99</option>
+      </select>
+      <button class="button" id="jamon y queso">Agregar</button>
+    </div>
+    <div>
+      <span>Vegetariana</span>
+      <img src="img/pizza vegetariana.jpg" >
+      <span>
+        <label for="qvegeta">Cantidad:</label>
+        <input type="number" id="qvegeta" name="qvegeta" min="0" max="25"> 
+      </span>
+      <select id="psizes" name="osizes">
+        <option value="Grande">Grande de 8 porciones $5.99</option>
+        <option value="Estacion">Pizza 4 estaciones $7.00</option>
+        <option value="Gigante">Gigante de 12 porciones $12.99</option>
+      </select>
+      <button class="button" id="Pizza Vegetarina">Vegetarina</button>
+    </div>
+    <div>
+      <span>Hongos</span>
+      <img src="img/pizza hongos.avif">
+      <span>
+        <label for="qhongos">Cantidad:</label>
+        <input type="number" id="qhongos" name="qhongos" min="0" max="25"> 
+      </span>
+      <select id="psizes" name="osizes">
+        <option value="Grande">Grande de 8 porciones $5.99</option>
+        <option value="Estacion">Pizza 4 estaciones $7.00</option>
+        <option value="Gigante">Gigante de 12 porciones $12.99</option>
+      </select>
+      <button class="button" id="Hongos">Hongos</button>
+    </div>
+    <div>
+      <span>Carne</span>
+      <img src="img/carne.png" >
+      <span>
+        <label for="qcarne">Cantidad:</label>
+        <input type="number" id="qcarne" name="qcarne" min="0" max="25"> 
+      </span>
+      <select id="psizes" name="osizes">
+        <option value="Grande">Grande de 8 porciones $5.99</option>
+        <option value="Estacion">Pizza 4 estaciones $7.00</option>
+        <option value="Gigante">Gigante de 12 porciones $12.99</option>
+      </select>
+      <button class="button" id="Carne">Agregar</button>
+    </div>
+     <!-- Aqui se pueden seguir agregando mas pizzas -->
+  </div>
+  <br>
+  <br>
+  <center><h3><p>Bebidas y Postres</p></h3></center>
+  <div id="bebidasPostresGroup" class="button-group">
+    <div>
+      <span>Soda</span>
+      <img src="img/soda.jpg"  style="width: 150px; height: 200px;">
+      <span>
+        <label for="qsoda">Cantidad:</label>
+        <input type="number" id="qsoda" name="qsoda" min="0" max="25"> 
+      </span>
+      <span>$1.00</span>
+      <button class="button" id="Soda">Agregar</button>
+    </div>
+    <div>
+      <span>Botella de agua</span>
+      <img src="img/agua.jpg " style="width:120px; height: 200px;">
+      <span>
+        <label for="qagua">Cantidad:</label>
+        <input type="number" id="qagua" name="qagua" min="0" max="25"> 
+      </span>
+      <span>$0.70</span>
+      <button class="button" id="Botella de agua">Agregar</button>
+    </div>
+    <div>
+      <span>Tres leches</span>
+      <img src="img/tresleche.jpg" style="width: 300px;">
+      <span>
+        <label for="qtres">Cantidad:</label>
+        <input type="number" id="qtres" name="qtres" min="0" max="25"> 
+      </span>
+      <span>$3.99</span>
+      <button class="button" id="Tres leche">Agregar</button>
+    </div>
+    <div>
+      <span>Palitroquis</span>
+      <img src="img/palitroquis.jpg" >
+      <span>
+        <label for="qpali">Cantidad:</label>
+        <input type="number" id="qpali" name="qpali" min="0" max="25"> 
+      </span>
+      <span>$2.49</span>
+      <button class="button" id="Palitroquis">Agregar</button>
+    </div>
+  <!-- Add more buttons for additional drinks here -->
+<center><h3><p>Elige tu forma de pago</p></h3></center>  
+</div>
+  <div id="pago" class="button-group">
+    <div>
+      <img src="img/tarjeta de credito.jpg"  style="width: 300px; height: 200px;">
+      <button class="button" id="Tarjeta">Trajeta de credito</button> 
+    </div>
+    <div>
+      <img src="img/dinero.jpg" style="width: 400px; height: 200px;">
+      <button class="button" id="Efectivo">Efectivo</button> 
+    </div>
+    <!-- Add more buttons for additional payment methods here -->
+  </div>
+  <script>
+    const pizzaGroup = document.getElementById('pizzasGroup');
+    const drinksDessertsGroup = document.getElementById('bebidasPostresGroup');
+    const paymentGroup = document.getElementById('pago');
+    const orderSummary = [];
+    const pizzaPrices = {
+      'Grande': 5.99,
+      'Estacion': 7.00,
+      'Gigante': 12.99
+      // Add more sizes and prices as needed
+    };
+  
+    const drinksDessertsPrices = {
+      'Soda': 1.00,
+      'Botella de agua': 0.70,
+      'Tres leche': 3.99,
+      'Palitroquis': 2.49
+      // Add more drinks/desserts and prices as needed
+    };
+  
+    function getCategoryDisplayName(category) {
+      switch (category) {
+        case 'pizzasGroup':
+          return 'Pizzas';
+        case 'bebidasPostresGroup':
+          return 'Bebidas y Postres';
+        case 'pago':
+          return 'Forma de pago';
+        // Add more cases if needed
+        default:
+          return category;
+      }
+    }
+  
+    function handleButtonClick(group, event) {
+      const targetButton = event.target;
+  
+      if (targetButton.classList.contains('button')) {
+        const category = group.id;
+        const selection = targetButton.id;
+        const quantityInput = targetButton.parentElement.querySelector('input');
+        const quantity = parseInt(quantityInput.value, 10) || 0;
+  
+        // Retrieve the selected option from the associated select element
+        const selectElement = targetButton.parentElement.querySelector('select');
+        const selectedSize = selectElement ? selectElement.options[selectElement.selectedIndex].value : null;
+  
+        if (quantity === 0) {
+          const existingItemIndex = orderSummary.findIndex((item) => item.category === category && item.selection === selection);
+  
+          if (existingItemIndex !== -1) {
+            orderSummary.splice(existingItemIndex, 1);
+          }
+        } else {
+          const existingItemIndex = orderSummary.findIndex((item) => item.category === category && item.selection === selection);
+  
+          if (existingItemIndex !== -1) {
+            orderSummary[existingItemIndex].quantity = quantity;
+            orderSummary[existingItemIndex].size = selectedSize;
+          } else {
+            const newItem = {
+              category,
+              selection,
+              quantity,
+              size: selectedSize
+            };
+            orderSummary.push(newItem);
+          }
+        }
+  
+        displayOrderSummary();
+      }
+    }
+  
+    function handlePaymentButtonClick(event) {
+      const targetButton = event.target;
+  
+      if (targetButton.classList.contains('button')) {
+        const category = paymentGroup.id;
+        const selection = targetButton.id;
+  
+        const existingItemIndex = orderSummary.findIndex((item) => item.category === category);
+  
+        if (existingItemIndex !== -1) {
+          orderSummary[existingItemIndex].paymentMethod = selection;
+        } else {
+          orderSummary.push({
+            category,
+            paymentMethod: selection,
+          });
+        }
+  
+        displayOrderSummary();
+      }
+    }
+  
+    function calculateTotalPrice() {
+      let totalPrice = 0;
+  
+      orderSummary.forEach((item) => {
+        if (item.category === 'pizzasGroup') {
+          const pizzaPrice = pizzaPrices[item.size] || 0;
+          totalPrice += pizzaPrice * item.quantity;
+        } else if (item.category === 'bebidasPostresGroup') {
+          const drinkDessertPrice = drinksDessertsPrices[item.selection] || 0;
+          totalPrice += drinkDessertPrice * item.quantity;
+        }
+        // Add other categories if needed
+      });
+  
+      return totalPrice;
+    }
+  
+    function displayOrderSummary() {
+      const summaryContainer = document.getElementById('orderSummary');
+      summaryContainer.innerHTML = '<h3>Orden:</h3>';
+  
+      let currentCategory = null;
+  
+      orderSummary.forEach((item) => {
+        if (item.category !== currentCategory) {
+          const categoryName = getCategoryDisplayName(item.category);
+          summaryContainer.innerHTML += `<p>------ ${categoryName} ------</p>`;
+          currentCategory = item.category;
+        }
+  
+        if (item.size) {
+          summaryContainer.innerHTML += `<p>${item.quantity} x ${item.selection} (${item.size})</p>`;
+        } else if (item.paymentMethod) {
+          summaryContainer.innerHTML += `<p>${item.paymentMethod}</p>`;
+        } else {
+          summaryContainer.innerHTML += `<p>${item.quantity} x ${item.selection}</p>`;
+        }
+      });
+  
+      const totalPrice = calculateTotalPrice();
+      summaryContainer.innerHTML += `<p>Total a pagar: $${totalPrice.toFixed(2)}</p>`;
+    }
+  
+    pizzaGroup.addEventListener('click', (event) => handleButtonClick(pizzaGroup, event));
+    drinksDessertsGroup.addEventListener('click', (event) => handleButtonClick(drinksDessertsGroup, event));
+    paymentGroup.addEventListener('click', handlePaymentButtonClick);
+
+    function displayOrderSummaryConfirm() {
+  let orderSummaryText = 'Resumen de la Orden:\n\n';
+
+  orderSummary.forEach((item) => {
+    if (item.category === 'pizzasGroup') {
+      orderSummaryText += `${item.quantity} x ${item.selection} (${item.size})\n`;
+    } else if (item.category === 'bebidasPostresGroup') {
+      orderSummaryText += `${item.quantity} x ${item.selection}\n`;
+    } else if (item.category === 'pago') {
+      orderSummaryText += `Metodo de pago: ${item.paymentMethod}\n`;
+    }
+    // Add other categories if needed
+  });
+
+  const totalPrice = calculateTotalPrice();
+  orderSummaryText += `\nTotal Price: $${totalPrice.toFixed(2)}`;
+
+  // Display order information in a confirm dialog
+  const isConfirmed = confirm(orderSummaryText);
+
+  if (isConfirmed) {
+    // User clicked "OK"
+    alert('¡Orden eviada exitosamente!');
+    location.reload(); // Reload the page
+    window.scrollTo(0, 0);
+    // You can proceed with further actions or submit the order
+  }
+}
+
+// Add a button or call this function when you want to display the order summary confirm dialog
+function showOrderSummary() {
+  displayOrderSummaryConfirm();
+}
+  </script>
+  <br>
+ <center><button class="button" onclick="showOrderSummary()">Realizar orden</button></center> 
+ 
+    
+<br>
+  <center><button class="button" onclick="window.location.href='datos.html';" id="Registrarse">Registrate</button></center>
+</body>
